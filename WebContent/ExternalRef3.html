@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Internal Referral</title>
+<title>External Referral</title>
 <link rel="stylesheet" type = "text/css" href="form.css"/>
 </head>
 <body>
@@ -12,7 +12,7 @@
 		<a href="Index.html"><img src="gov-logo.png" alt="Logo" style="width:185px;height:60px;"></a>
 	</div>
 	<br>
-	<h1>Internal Referral</h1>
+	<h1>External Referral</h1>
 	
 </div>
 
@@ -21,22 +21,21 @@
 </div>
 
 <div class="main">
-	 <h1>Step 3 - Representative Information</h1>
+	 <h1>Step 3 - Representative</h1>
 </div>
 
 <div class="form">
-	<form action="InternalRef4.html">
-
-		Does the Claimant have a PAB/CAB? <br><br>
-		<select name="PABandCAB" required>
-			<option value="Confirmed">Confirmed</option>
-			<option value="NotRequired">Not Required</option>
-			<option value="Potentail">Potential</option>
-		</select> <br><br><br> 
-		
-		<hr> <br>
-		
-		Title: 
+<form action="ExternalRef4.html">
+	Do they have a legal representative?<br><br>
+	<select name="legalRep"required>
+	<option value="NotRequired">Not Required</option>
+	<option value="AlreadyHas"> Already Has</option>
+	<option vaule="Required"> Required </option>	
+	</select><br><br><br>
+	
+	<hr> <br>
+	
+	Title: 
 		<select name="title"required>
 			<option value="Miss">Miss</option>
 			<option value="Ms">Ms</option>
@@ -45,11 +44,11 @@
 			<option value="Dr">Dr</option>
 		</select>	<br><br>
 		First Name: 
-		<input type="text" name="fname"required><br> <br>
+		<input type="text" name="fname"><br> <br>
 		Surname: 
-		<input type="text" name="sname"required><br> <br>
+		<input type="text" name="sname"><br> <br>
 		Address: 
-		<select name="Address"required>
+		<select name="Address">
 			<option value="Same">Same As Claimant</option>
 			<option value="other">Other</option>
 		</select><br> <br>
@@ -77,17 +76,11 @@
 		No <input type="radio" name="UCBNO" value="No" checked><br>
 		Yes <input type="radio" name="UCBYes" value="Yes"><br> <br>
 		
-		<a href="InternalRef2.html"><input type="button" value="Back"/></a>
+		<a href="ExternalRef2.html"><input type="button" value="Back"/></a>
 		<input type="submit">
 	</form>
 	
 	
 	
-	
-</div>
-
-
-
-
 </body>
 </html>
