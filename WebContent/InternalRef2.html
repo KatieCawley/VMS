@@ -52,12 +52,33 @@
 		Care of Address? <br>
 		No <input type="radio" name="CareOf" value="No" > <br> 
 		Yes <input type="radio" name="CareOf" value="Yes"> <br> <br>
-		National Insurance Number: 
-		<input type="text" name="NINOText"><br>
-		Please select here if NINO is unknown/not allocated:
-		<input type="checkbox" name="NINO"  onclick="ninoNotKnown()"><br><br>
+		
+		National Insurance Number(NINO): 
+		<input type="radio" name="NINO/CRN"  value="NINO"/><br><br>
 		Child Reference Number (CRN): 
-		<input type="checkbox" name="CRN"><br><br>
+		<input type="radio" name="NINO/CRN" value="CRN"/><br><br>
+		Unknown NINO/CRN:
+		<input type="radio" name="NINO/CRN" value="Unknown"/><br><br>
+			
+		<input style="display:none;" type="text" name="otherAnswer" id="otherAnswer"/>
+		
+		<script type="text/javascript">
+		("input[type='radio']").change(function(){
+			   
+			if((this).val() == "NINO")
+			{
+			    ("#otherAnswer").show();
+			}
+			
+			else
+			{
+			       ("#otherAnswer").hide(); 
+			}
+			    
+			});
+		</script>
+
+	
 		Date of Birth: 
 		<input type="date" name="DOB" required><br><br>
 		Contact Number - Home: 
