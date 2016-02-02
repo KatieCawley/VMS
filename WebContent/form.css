@@ -80,7 +80,7 @@ input[type=radio]{
 	height: 15px ;
 }
 
-input[type=submit], input[type=button]{
+input[type=submit], input[type=button], input[type=file]{
 	width: 80x ;
 	height: 40px ;
 	font-size: 30px ;
