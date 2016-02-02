@@ -25,17 +25,18 @@
 </div>
 
 <div class="form">
-	<form action="InternalRef4.html">
 
 		Does the Claimant have a PAB/CAB? <br><br>
 		<select id="PABandCAB" required onchange="showDiv(this)">
+			<option value="select" disabled selected>Please Select</option>
 			<option value="Confirmed">Confirmed</option>
 			<option value="Confirmed">Potential</option>
 			<option value="NotRequired">Not Required</option>
 		</select> <br><br><br> 
 		
+	<form action="InternalRef4.html">
+<div id="hidden_div">
 		<hr> <br>
-		<div id="hidden_div">
 		Title: 
 		<select name="title"required>
 			<option value="Miss">Miss</option>
@@ -76,14 +77,13 @@
 		Unacceptable Customer Behaviour (UCB): <br>
 		No <input type="radio" name="UCBNO" value="No" checked><br>
 		Yes <input type="radio" name="UCBYes" value="Yes"><br> <br>
-		</div>
 
+</div>
 		<a href="InternalRef2.html"><input type="button" value="Back"/></a>
 		<input type="submit">
 	</form>
 	
-	
-	
+
 	
 </div>
 
@@ -95,14 +95,15 @@ onChange = function(event) {
     document.getElementById('hidden_div').style.display = shown ? 'block' : 'none';
 };
 
-// attach event handler
+
+//attach event handler
 if (window.addEventListener) {
-    select.addEventListener('change', onChange, false);
+ select.addEventListener('change', onChange, false);
 } else {
-    // of course, IE < 9 needs special treatment
-    select.attachEvent('onchange', function() {
-        onChange.apply(select, arguments);
-    });
+ // of course, IE < 9 needs special treatment
+ select.attachEvent('onchange', function() {
+     onChange.apply(select, arguments);
+ });
 }
 </script>
 
