@@ -49,10 +49,12 @@
 		Home Address Post Code: 
 		<input type="text" name="HAPostCode"required><br> <br>
 		Care of Address? <br>
-		No <input type="radio" name="CareOfNo" value="No" checked> <br> 
-		Yes <input type="radio" name="CareOfYes" value="Yes"> <br> <br>
+		No <input type="radio" name="CareOf" value="No" > <br> 
+		Yes <input type="radio" name="CareOf" value="Yes"> <br> <br>
 		National Insurance Number: 
-		<input type="checkbox" name="NINO"><br><br>
+		<input type="text" name="NINOText"><br>
+		Please select here if NINO is unknown/not allocated:
+		<input type="checkbox" name="NINO"  onclick="ninoNotKnown()"><br><br>
 		Child Reference Number (CRN): 
 		<input type="checkbox" name="CRN"><br><br>
 		Date of Birth: 
@@ -64,11 +66,11 @@
 		Contact Number - Other: 
 		<input type="text" name="ContactNumOther"><br> <br>
 		Welsh Letter: <br>
-		No <input type="radio" name="WelshNO" value="No" checked><br>
-		Yes <input type="radio" name="WelshYes" value="Yes"><br> <br>
+		No <input type="radio" name="Welsh" value="No" ><br>
+		Yes <input type="radio" name="Welsh" value="Yes" ><br> <br>
 		Large Print Letter: <br>
-		No <input type="radio" name="LPNO" value="No" checked><br>
-		Yes <input type="radio" name="LPYes" value="Yes"><br> <br>		
+		No <input type="radio" name="LP" value="No"><br>
+		Yes <input type="radio" name="LP" value="Yes"><br> <br>		
 		<a href="ExternalRef1.html"><input type="button" value="Back"/></a>
 		<input type="submit">
 	</form>
