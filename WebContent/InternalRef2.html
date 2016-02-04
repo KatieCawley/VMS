@@ -49,22 +49,24 @@
 		<input type="text" name="HACounty" required><br> <br>
 		Home Address Post Code: 
 		<input type="text" name="HAPostCode" required><br> <br>
-		Care of Address? <br>
-		No <input type="radio" name="CareOf" value="No"> <br> 
-		Yes <input type="radio" name="CareOf" value="Yes"> <br> <br>
 		
-		<div id="CareOfAddress">
-		Care of Address Line 1: 
-		<input type="text" name="COALine1"><br><br>
-		Care of Address Line 2: 
-		<input type="text" name="COALine2"><br><br> 
-		Care of Address Town/City: 
-		<input type="text" name="COATownOrCity"><br><br>
-		Care of Address County: 
-		<input type="text" name="COACounty"><br><br>
-		Care of Address Post Code: 
-		<input type="text" name="COAPostCode"><br><br>
-		</div>
+Care of Address? <br>
+Yes<input type="radio" class="yes" name="radio1" value="Yes" onClick="getResults(this)">
+No<input type="radio" class="no" name="radio1" value="No" onclick="getResults(this)">
+
+<div class="text adrs"><p>Address Line 1  <input type="text" name="text1" id="text1" maxlength="30"></p></div>
+<div class="text adrs"><p>Address Line 2 <input type="text" name="text2" id="text2" maxlength="30"></p></div>
+<div class="text adrs"><p>Address Line 3  <input type="text" name="text3" id="text3" maxlength="30"></p></div>
+<div class="text adrs"><p>Address Line 4 <input type="text" name="text4" id="text4" maxlength="30"></p></div>
+<div class="text"><p>Postcode  <input type="text" name="text5" id="text5" maxlength="30"></p></div>
+			
+<script> $(document).ready(function() {
+    $(".text").hide();
+
+});
+function getResults(elem) {
+    elem.checked && elem.value == "Yes" ? $(".text").show() : $(".text").hide();
+};</script>
 		
 		
 		National Insurance Number(NINO): 
