@@ -28,13 +28,23 @@
 	<form action="ExternalRef5.html">
 	
 	Reason for Visit:
-		<input type="text" name="reason"required><br><br>
+		<input type="text" name="reason"required>
+	<div class="tooltip">
+	<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
+	<span class="tooltiptext">Please give in detail the reason for a member of staff to visit the claimant.</span>
+	</div>
+		<br><br>
 	Address of Visit: 
 		<select name="Address"required>
 			<option value="Cust">Customer Address</option>
 			<option value="Rep">Representative Address</option>
 			<option value="Other">Other Address</option>
-		</select><br><br>
+		</select>
+	<div class="tooltip">
+	<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
+	<span class="tooltiptext">This is the address that the visiting officer will visit.</span>
+	</div>
+		<br><br>
 		Other Address Line 1: 
 		<input type="text" name="HALine1"><br> <br>
 		Other Address Line 2: 
@@ -46,9 +56,18 @@
 		Other Address Post Code: 
 		<input type="text" name="HAPostCode"><br> <br>
 		Risk Factors: 
-		<input type="text" name="risks"><br><br>
+		<input type="text" name="risks">
+		<div class="tooltip">
+		<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
+		<span class="tooltiptext">Please include any risk factors, affecting the claimant or visiting officer</span>
+		</div><br><br>
 		Accessibility Requirements: 
-		<input type="text" name="accessibility"><br><br>
+		<input type="text" name="accessibility">
+		<div class="tooltip">
+		<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
+		<span class="tooltiptext">Please include any accessibility requirements e.g. if the address is in a large building and there is not elevator. </span>
+		</div>
+		<br><br>
 		Has Customer Been Given Verbal Consent to DWP Visiting?<br>
 		No <input type="radio" name="VC" id="VCNO" value="No" required><br>
 		Yes <input type="radio" name="VC" id=VCYes" value="Yes" required><br> <br>

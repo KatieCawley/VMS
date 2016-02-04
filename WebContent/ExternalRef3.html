@@ -25,16 +25,24 @@
 </div>
 
 <div class="form">
-<form action="ExternalRef4.html">
-	Do they have a legal representative?<br><br>
-	<select name="legalRep"required>
+
+
+<form>
+	Do they have a legal representative?
+	<div class="tooltip">
+	<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
+	<span class="tooltiptext">This is someone who acts on behalf of the claimant e.g. Power of Attorney </span>
+	</div><br><br>
+	<select id="legalRep"required onchange="showDiv(this)">
+	<option value="select" disabled selected>Please Select</option>
 	<option value="NotRequired">Not Required</option>
-	<option value="AlreadyHas"> Already Has</option>
-	<option vaule="Required"> Required </option>	
+	<option value="Confirmed"> Already Has</option>
+	<option value="Confirmed"> Required </option>	
 	</select><br><br><br>
 	
 	<hr> <br>
 	
+<div id="hidden_div">	
 	Title: 
 		<select name="title"required>
 			<option value="Miss">Miss</option>
@@ -48,10 +56,14 @@
 		Surname: 
 		<input type="text" name="sname"required><br> <br>
 		Address: 
-		<select name="Address"required>
+		<select id="Address" required>
 			<option value="Same">Same As Claimant</option>
 			<option value="other">Other</option>
-		</select><br> <br>
+		</select>
+		<div class="tooltip">
+		<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
+		<span class="tooltiptext">This is either the same address of the customer if they live in the same home, or a different address. </span>
+		</div><br> <br>
 		Representative Address Line 1: 
 		<input type="text" name="HALine1"><br> <br>
 		Representative Address Line 2: 
@@ -73,11 +85,32 @@
 		Contact Number - Other: 
 		<input type="text" name="ContactNumOther"><br> <br>
 
-		
-		<a href="ExternalRef2.html"><input type="button" value="Back"/></a>
-		<input type="submit">
+</div>		
 	</form>
+		<a href="ExternalRef2.html"><input type="button" value="Back"/></a>
+		<a href="ExternalRef4.html"><input type="button" value="Submit"/></a>
 	
+</div>
+	
+	<script>
+	var select = document.getElementById('legalRep'),
+	onChange = function(event) {
+	    var shown = this.options[this.selectedIndex].value == "Confirmed";
+
+	    document.getElementById('hidden_div').style.display = shown ? 'block' : 'none';
+	};
+
+
+	//attach event handler
+	if (window.addEventListener) {
+	 select.addEventListener('change', onChange, false);
+	} else {
+	 // of course, IE < 9 needs special treatment
+	 select.attachEvent('onchange', function() {
+	     onChange.apply(select, arguments);
+	 });
+	}
+	</script>
 	
 	
 </body>
