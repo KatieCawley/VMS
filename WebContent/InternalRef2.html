@@ -3,116 +3,125 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Internal Referral</title>
-<link rel="stylesheet" type = "text/css" href="form.css"/>
+<link rel="stylesheet" type="text/css" href="form.css" />
 </head>
 <body>
 
-<div class="header">
-	<div class="logo">
-		<a href="Index.html"><img src="gov-logo.png" alt="Logo" style="width:185px;height:60px;"></a>
+	<div class="header">
+		<div class="logo">
+			<a href="Index.html"><img src="gov-logo.png" alt="Logo"
+				style="width: 185px; height: 60px;"></a>
+		</div>
+		<br>
+		<h1>Internal Referral</h1>
+
 	</div>
-	<br>
-	<h1>Internal Referral</h1>
-	
-</div>
 
-<div class="subheading">
- 	<p> </p>
-</div>
+	<div class="subheading">
+		<p></p>
+	</div>
 
-<div class="main">
-	 <h1>Step 2 - Customer Information</h1>
-</div>
+	<div class="main">
+		<h1>Step 2 - Customer Information</h1>
+	</div>
 
-<div class="form">
-	<form action="InternalRef3.html">
+	<div class="form">
+		<form action="InternalRef3.html">
 
-		Title: 
-		<select name="title" required>
-			<option value="Miss">Miss</option>
-			<option value="Ms">Ms</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Mr">Mr</option>
-			<option value="Dr">Dr</option>
-		</select>	<br><br>
-		First Name: 
-		<input type="text" name="fname" required><br> <br>
-		Surname: 
-		<input type="text" name="sname" required><br> <br>
-		Home Address Line 1: 
-		<input type="text" name="HALine1" required><br> <br>
-		Home Address Line 2: 
-		<input type="text" name="HALine2" required><br> <br>
-		Home Address Town/City: 
-		<input type="text" name="HATownorCity" required><br> <br>
-		Home Address County: 
-		<input type="text" name="HACounty" required><br> <br>
-		Home Address Post Code: 
-		<input type="text" name="HAPostCode" required><br> <br>
-		
-Care of Address? <br>
-Yes<input type="radio" class="yes" name="radio1" value="Yes" onClick="getResults(this)">
-No<input type="radio" class="no" name="radio1" value="No" onclick="getResults(this)">
+			Title: <select name="title" required>
+				<option value="Miss">Miss</option>
+				<option value="Ms">Ms</option>
+				<option value="Mrs">Mrs</option>
+				<option value="Mr">Mr</option>
+				<option value="Dr">Dr</option>
+			</select> <br>
+			<br> First Name: <input type="text" name="fname" required><br>
+			<br> Surname: <input type="text" name="sname" required><br>
+			<br> Home Address Line 1: <input type="text" name="HALine1"
+				required><br> <br> Home Address Line 2: <input
+				type="text" name="HALine2" required><br> <br> Home
+			Address Town/City: <input type="text" name="HATownorCity" required><br>
+			<br> Home Address County: <input type="text" name="HACounty"
+				required><br> <br> Home Address Post Code: <input
+				type="text" name="HAPostCode" required><br> <br>
 
-<div class="text adrs"><p>Address Line 1  <input type="text" name="text1" id="text1" maxlength="30"></p></div>
-<div class="text adrs"><p>Address Line 2 <input type="text" name="text2" id="text2" maxlength="30"></p></div>
-<div class="text adrs"><p>Address Line 3  <input type="text" name="text3" id="text3" maxlength="30"></p></div>
-<div class="text adrs"><p>Address Line 4 <input type="text" name="text4" id="text4" maxlength="30"></p></div>
-<div class="text"><p>Postcode  <input type="text" name="text5" id="text5" maxlength="30"></p></div>
+			Care of Address? <br> 
+			<label for="chkYes"> 
+			<input type="radio" id="chkYes" name="chk" onclick="ShowHideDiv()" /> Yes
+			</label> 
+			<label for="chkNo"> 
+			<input type="radio" id="chkNo" name="chk" onclick="ShowHideDiv()" /> No<br><br>
+			</label>
+			<div id="dvtext" style="display: none">
+				Address Line 1: <input type="text" id="txtBox" /><br>
+				<br> Address Line 2: <input type="text" id="txtBox" /><br>
+				<br> Address Line 3: <input type="text" id="txtBox" /><br>
+				<br> Address Line 4: <input type="text" id="txtBox" /><br>
+				<br> Postcode: <input type="text" id="txtBox" /><br>
+				<br>
+			</div>
+			<script>
+				function ShowHideDiv() {
+					var chkYes = document.getElementById("chkYes");
+					var dvtext = document.getElementById("dvtext");
+					dvtext.style.display = chkYes.checked ? "block" : "none";
+				}
+			</script>
+
 			
-<script> $(document).ready(function() {
-    $(".text").hide();
+			National Insurance or CRN
+<br>
+<label for="rdNINO">NINO</label>
 
+<input id="rdNINO" type="radio" name="radio1" value="NINO" onClick="getResults(this)">
+<label for="rdCRN">CRN</label>
+<input id="rdCRN" type="radio" name="radio1" value="CRN" onClick="getResults(this)">
+<label for="rdUnknown">Unknown</label><br><br>
+<input id="rdUnknown" type="radio" name="radio1" value="Unknown" onclick="getResults(this)" checked="checked">
+<div class="text" style="display:none;">
+  <p>Enter Valid
+    <input type="text" name="text1" id="text1" maxlength="30">
+  </p>
+</div>
+		<script>
+		$('#rdNINO').on('click', function() {
+  $(".text").show();
 });
-function getResults(elem) {
-    elem.checked && elem.value == "Yes" ? $(".text").show() : $(".text").hide();
-};</script>
-		
-		
-		National Insurance Number(NINO): 
-		<input type="radio" name="NINO/CRN"  value="NINO" onclick="show();"/><br><br>
-		Child Reference Number (CRN): 
-		<input type="radio" name="NINO/CRN" value="CRN" onclick="show();"/><br><br>
-		Unknown NINO/CRN:
-		<input type="radio" name="NINO/CRN" value="Unknown" onclick="hide();"/><br><br>
+
+$('#rdUnknown').on('click', function() {
+  $(".text").hide();
+});
+
+$('#rdCRN').on('click', function() {
+  $(".text").show();
+});	
+		</script>
 			
-		<tr> <textarea id="area" style="display:none;" name="data" rows=2 cols=50> </textarea></tr><br><br>
-	
-		 <script type="text/javascript">
-        function show() { document.getElementById('area').style.display = 'block'; }
-        function hide() { document.getElementById('area').style.display = 'none'; }
-      </script>
+			Date of Birth: <input type="date" name="DOB" required><br>
+			<br> Contact Number - Home: <input type="text"
+				name="ContactNumHome"><br> <br> Contact Number -
+			Mobile: <input type="text" name="ContactNumMobile"><br>
+			<br> Contact Number - Other: <input type="text"
+				name="ContactNumOther"><br> <br> Unacceptable
+			Customer Behaviour (UCB): <br> No <input type="radio" name="UCB"
+				value="No" Required><br> Yes <input type="radio"
+				name="UCB" value="Yes" Required><br> <br> Welsh
+			Letter: <br> No <input type="radio" name="Welsh" value="No"
+				checked><br> Yes <input type="radio" name="Welsh"
+				value="Yes"><br> <br> Large Print Letter: <br>
+			No <input type="radio" name="LP" value="No" checked><br>
+			Yes <input type="radio" name="LP" value="Yes"><br> <br>
+			<a href="InternalRef1.html"><input type="button" value="Back" /></a>
+			<input type="submit">
+		</form>
 
+	</div>
 
-	
-		Date of Birth: 
-		<input type="date" name="DOB" required><br><br>
-		Contact Number - Home: 
-		<input type="text" name="ContactNumHome"><br> <br>
-		Contact Number - Mobile:
-		<input type="text" name="ContactNumMobile"><br> <br>
-		Contact Number - Other: 
-		<input type="text" name="ContactNumOther"><br> <br>
-		Unacceptable Customer Behaviour (UCB): <br>
-		No <input type="radio" name="UCB" value="No" Required><br>
-		Yes <input type="radio" name="UCB" value="Yes" Required><br> <br>
-		Welsh Letter: <br>
-		No <input type="radio" name="Welsh" value="No" checked><br>
-		Yes <input type="radio" name="Welsh" value="Yes"><br> <br>
-		Large Print Letter: <br>
-		No <input type="radio" name="LP" value="No" checked><br>
-		Yes <input type="radio" name="LP" value="Yes"><br> <br>		
-		<a href="InternalRef1.html"><input type="button" value="Back"/></a>
-		<input type="submit">
-	</form>
-
-</div>
-
-<script type="text/javascript">
-function ninoNotKnown() {
-    alert("You have selected 'NINO not known'. Are you sure you do not know the Claimant's NINO?");
-}
-</script>
+	<script type="text/javascript">
+		function ninoNotKnown() {
+			alert("You have selected 'NINO not known'. Are you sure you do not know the Claimant's NINO?");
+		}
+	</script>
 
 
 </body>
