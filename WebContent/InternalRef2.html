@@ -54,29 +54,18 @@
 		Yes <input type="radio" name="CareOf" value="Yes"> <br> <br>
 		
 		National Insurance Number(NINO): 
-		<input type="radio" name="NINO/CRN"  value="NINO"/><br><br>
+		<input type="radio" name="NINO/CRN"  value="NINO" onclick="show();"/><br><br>
 		Child Reference Number (CRN): 
-		<input type="radio" name="NINO/CRN" value="CRN"/><br><br>
+		<input type="radio" name="NINO/CRN" value="CRN" onclick="show();"/><br><br>
 		Unknown NINO/CRN:
-		<input type="radio" name="NINO/CRN" value="Unknown"/><br><br>
+		<input type="radio" name="NINO/CRN" value="Unknown" onclick="hide();"/><br><br>
 			
-		<input style="display:none;" type="text" name="otherAnswer" id="otherAnswer"/>
+		<tr> <textarea id="area" style="display:none;" name="data" rows=2 cols=50> </textarea></tr><br><br>
 		
-		<script type="text/javascript">
-		("input[type='radio']").change(function(){
-			   
-			if((this).val() == "NINO")
-			{
-			    ("#otherAnswer").show();
-			}
-			
-			else
-			{
-			       ("#otherAnswer").hide(); 
-			}
-			    
-			});
-		</script>
+		 <script type="text/javascript">
+        function show() { document.getElementById('area').style.display = 'block'; }
+        function hide() { document.getElementById('area').style.display = 'none'; }
+      </script>
 
 	
 		Date of Birth: 
