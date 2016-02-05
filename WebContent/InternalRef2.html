@@ -34,31 +34,28 @@
 				<option value="Mrs">Mrs</option>
 				<option value="Mr">Mr</option>
 				<option value="Dr">Dr</option>
-			</select> <br>
-			<br> First Name: <input type="text" name="fname" required><br>
-			<br> Surname: <input type="text" name="sname" required><br>
-			<br> Home Address Line 1: <input type="text" name="HALine1"
-				required><br> <br> Home Address Line 2: <input
-				type="text" name="HALine2" required><br> <br> Home
-			Address Town/City: <input type="text" name="HATownorCity" required><br>
-			<br> Home Address County: <input type="text" name="HACounty"
-				required><br> <br> Home Address Post Code: <input
-				type="text" name="HAPostCode" required><br> <br>
-
-			Care of Address? <br> 
-			<label for="chkYes"> 
-			<input type="radio" id="chkYes" name="chk" onclick="ShowHideDiv()" /> Yes
-			</label> 
-			<label for="chkNo"> 
-			<input type="radio" id="chkNo" name="chk" onclick="ShowHideDiv()" /> No<br><br>
+			</select> <br> <br> First Name: <input type="text" name="fname"
+				required><br> <br> Surname: <input type="text"
+				name="sname" required><br> <br> Home Address Line
+			1: <input type="text" name="HALine1" required><br> <br>
+			Home Address Line 2: <input type="text" name="HALine2" required><br>
+			<br> Home Address Town/City: <input type="text"
+				name="HATownorCity" required><br> <br> Home
+			Address County: <input type="text" name="HACounty" required><br>
+			<br> Home Address Post Code: <input type="text"
+				name="HAPostCode" required><br> <br> Care of
+			Address? <br> <label for="chkYes"> <input type="radio"
+				id="chkYes" name="chk" onclick="ShowHideDiv()" /> Yes
+			</label> <label for="chkNo"> <input type="radio" id="chkNo"
+				name="chk" onclick="ShowHideDiv()" /> No<br>
+			<br>
 			</label>
 			<div id="dvtext" style="display: none">
-				Address Line 1: <input type="text" id="txtBox" /><br>
-				<br> Address Line 2: <input type="text" id="txtBox" /><br>
-				<br> Address Line 3: <input type="text" id="txtBox" /><br>
-				<br> Address Line 4: <input type="text" id="txtBox" /><br>
-				<br> Postcode: <input type="text" id="txtBox" /><br>
-				<br>
+				Address Line 1: <input type="text" id="txtBox" /><br> <br>
+				Address Line 2: <input type="text" id="txtBox" /><br> <br>
+				Address Line 3: <input type="text" id="txtBox" /><br> <br>
+				Address Line 4: <input type="text" id="txtBox" /><br> <br>
+				Postcode: <input type="text" id="txtBox" /><br> <br>
 			</div>
 			<script>
 				function ShowHideDiv() {
@@ -68,48 +65,39 @@
 				}
 			</script>
 
-			
-			National Insurance or CRN
-<br>
-<label for="rdNINO">NINO</label>
 
-<input id="rdNINO" type="radio" name="radio1" value="NINO" onClick="getResults(this)">
-<label for="rdCRN">CRN</label>
-<input id="rdCRN" type="radio" name="radio1" value="CRN" onClick="getResults(this)">
-<label for="rdUnknown">Unknown</label><br><br>
-<input id="rdUnknown" type="radio" name="radio1" value="Unknown" onclick="getResults(this)" checked="checked">
-<div class="text" style="display:none;">
-  <p>Enter Valid
-    <input type="text" name="text1" id="text1" maxlength="30">
-  </p>
-</div>
-		<script>
-		$('#rdNINO').on('click', function() {
-  $(".text").show();
-});
+			National Insurance, CRN, Unknown
+			<script type="text/javascript">
+				function CheckCRNNINO(val) {
+					var element = document.getElementById('ninocrn');
+					if (val == 'CRN' || val == 'NINO')
+						element.style.display = 'block';
+					else
+						element.style.display = 'none';
+				}
+			</script>
 
-$('#rdUnknown').on('click', function() {
-  $(".text").hide();
-});
-
-$('#rdCRN').on('click', function() {
-  $(".text").show();
-});	
-		</script>
-			
-			Date of Birth: <input type="date" name="DOB" required><br>
-			<br> Contact Number - Home: <input type="text"
-				name="ContactNumHome"><br> <br> Contact Number -
-			Mobile: <input type="text" name="ContactNumMobile"><br>
-			<br> Contact Number - Other: <input type="text"
-				name="ContactNumOther"><br> <br> Unacceptable
-			Customer Behaviour (UCB): <br> No <input type="radio" name="UCB"
-				value="No" Required><br> Yes <input type="radio"
-				name="UCB" value="Yes" Required><br> <br> Welsh
-			Letter: <br> No <input type="radio" name="Welsh" value="No"
-				checked><br> Yes <input type="radio" name="Welsh"
-				value="Yes"><br> <br> Large Print Letter: <br>
-			No <input type="radio" name="LP" value="No" checked><br>
+			<select name="ninocrn" onchange='CheckCRNNINO(this.value);'>
+				<option>Please select</option>
+				<option value="NINO">National Insurance</option>
+				<option value="CRN">Child Reference Number</option>
+				<option value="Unknown">Unknown</option>
+			</select> 
+			<input type="text" name="ninocrn" id="ninocrn" style='display: none;' /> <br> 
+				
+				<br>Date of Birth: <input
+				type="date" name="DOB" required><br> <br> Contact
+			Number - Home: <input type="text" name="ContactNumHome"><br>
+			<br> Contact Number - Mobile: <input type="text"
+				name="ContactNumMobile"><br> <br> Contact Number -
+			Other: <input type="text" name="ContactNumOther"><br> <br>
+			Unacceptable Customer Behaviour (UCB): <br> No <input
+				type="radio" name="UCB" value="No" Required><br> Yes <input
+				type="radio" name="UCB" value="Yes" Required><br> <br>
+			Welsh Letter: <br> No <input type="radio" name="Welsh"
+				value="No" checked><br> Yes <input type="radio"
+				name="Welsh" value="Yes"><br> <br> Large Print
+			Letter: <br> No <input type="radio" name="LP" value="No" checked><br>
 			Yes <input type="radio" name="LP" value="Yes"><br> <br>
 			<a href="InternalRef1.html"><input type="button" value="Back" /></a>
 			<input type="submit">
@@ -122,6 +110,8 @@ $('#rdCRN').on('click', function() {
 			alert("You have selected 'NINO not known'. Are you sure you do not know the Claimant's NINO?");
 		}
 	</script>
+
+
 
 
 </body>
