@@ -3,89 +3,100 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>External Referral</title>
-<link rel="stylesheet" type = "text/css" href="form.css"/>
+<link rel="stylesheet" type="text/css" href="form.css" />
 </head>
 <body>
 
-<div class="header">
-	<div class="logo">
-		<a href="Index.html"><img src="gov-logo.png" alt="Logo" style="width:185px;height:60px;"></a>
+	<div class="header">
+		<div class="logo">
+			<a href="Index.html"><img src="gov-logo.png" alt="Logo"
+				style="width: 185px; height: 60px;"></a>
+		</div>
+		<br>
+		<h1>External Referral</h1>
+
 	</div>
-	<br>
-	<h1>External Referral</h1>
-	
-</div>
 
-<div class="subheading">
- 	<p> </p>
-</div>
+	<div class="subheading">
+		<p></p>
+	</div>
 
-<div class="main">
-	 <h1>Step 2 - Customer</h1>
-</div>
-<div class="form">
-	<form action="ExternalRef3.html">
+	<div class="main">
+		<h1>Step 2 - Customer</h1>
+	</div>
+	<div class="form">
+		<form action="ExternalRef3.html">
 
-		Title: 
-		<select name="title"required>
-			<option value="Miss">Miss</option>
-			<option value="Ms">Ms</option>
-			<option value="Mrs">Mrs</option>
-			<option value="Mr">Mr</option>
-			<option value="Dr">Dr</option>
-		</select>	<br><br>
-		First Name: 
-		<input type="text" name="fname"required><br> <br>
-		Surname: 
-		<input type="text" name="sname"required><br> <br>
-		Home Address Line 1: 
-		<input type="text" name="HALine1"required>
-		<div class="tooltip">
-		<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
-		<span class="tooltiptext">This is the claimants current home where they are living, NOT necessarily the visit address  </span></div><br> <br>
-		Home Address Line 2: 
-		<input type="text" name="HALine2"required><br> <br>
-		Home Address Town/City: 
-		<input type="text" name="HATownorCity"required><br> <br>
-		Home Address County: 
-		<input type="text" name="HACounty"required><br> <br>
-		Home Address Post Code: 
-		<input type="text" name="HAPostCode"required><br> <br>
-		Care of Address? 
-		<div class="tooltip">
-		<img src="Question_Mark.png" alt="QMArk" style="width:20px;height:20px;">
-		<span class="tooltiptext">This is a nominated address for correspondents to be sent to e.g. Letters to be sent to.</span>
-		</div><br>
-		No <input type="radio" name="CareOf" value="No" > <br> 
-		Yes <input type="radio" name="CareOf" value="Yes"> <br> <br>
-		National Insurance Number: 
-		<input type="text" name="NINOText"><br>
-		Please select here if NINO is unknown/not allocated:
-		<input type="checkbox" name="NINO"  onclick="ninoNotKnown()"><br><br>
-		Child Reference Number (CRN): 
-		<input type="checkbox" name="CRN"><br><br>
-		Date of Birth: 
-		<input type="date" name="DOB"><br><br>
-		Contact Number - Home: 
-		<input type="text" name="ContactNumHome"><br> <br>
-		Contact Number - Mobile:
-		<input type="text" name="ContactNumMobile"><br> <br>
-		Contact Number - Other: 
-		<input type="text" name="ContactNumOther"><br> <br>
-		Welsh Letter: <br>
-		No <input type="radio" name="Welsh" value="No" ><br>
-		Yes <input type="radio" name="Welsh" value="Yes" ><br> <br>
-		Large Print Letter: <br>
-		No <input type="radio" name="LP" value="No"><br>
-		Yes <input type="radio" name="LP" value="Yes"><br> <br>		
-		<a href="ExternalRef1.html"><input type="button" value="Back"/></a>
-		<input type="submit">
-	</form>
-	
-	
-	
-	
-</div>
+			Title: <select name="title" required>
+				<option value="Miss">Miss</option>
+				<option value="Ms">Ms</option>
+				<option value="Mrs">Mrs</option>
+				<option value="Mr">Mr</option>
+				<option value="Dr">Dr</option>
+			</select> <br>
+			<br> First Name: <input type="text" name="fname" required><br>
+			<br> Surname: <input type="text" name="sname" required><br>
+			<br> Home Address Line 1: <input type="text" name="HALine1"
+				required>
+			<div class="tooltip">
+				<img src="Question_Mark.png" alt="QMArk"
+					style="width: 20px; height: 20px;"> <span class="tooltiptext">This
+					is the claimants current home where they are living, NOT
+					necessarily the visit address </span>
+			</div>
+			<br> <br> Home Address Line 2: <input type="text"
+				name="HALine2" required><br> <br> Home Address
+			Town/City: <input type="text" name="HATownorCity" required><br>
+			<br> Home Address County: <input type="text" name="HACounty"
+				required><br> <br> Home Address Post Code: <input
+				type="text" name="HAPostCode" required><br> <br>
+			Care of Address?
+			<div class="tooltip">
+				<img src="Question_Mark.png" alt="QMArk"
+					style="width: 20px; height: 20px;"> <span class="tooltiptext">This
+					is a nominated address for correspondents to be sent to e.g.
+					Letters to be sent to.</span>
+			</div>
+			<br> No <input type="radio" name="CareOf" value="No"> <br>
+			Yes <input type="radio" name="CareOf" value="Yes"> <br>
+			
+			<br> National Insurance Number(NINO), Child Reference Number(CRN), Unknown
+			<script type="text/javascript">
+				function CheckCRNNINO(val) {
+					var element = document.getElementById('ninocrn');
+					if (val == 'CRN' || val == 'NINO')
+						element.style.display = 'block';
+					else
+						element.style.display = 'none';
+				}
+			</script>
+
+			<select name="ninocrn" onchange='CheckCRNNINO(this.value);'>
+				<option>Please select</option>
+				<option value="NINO">National Insurance(NINO)</option>
+				<option value="CRN">Child Reference Number(CRN)</option>
+				<option value="Unknown">Unknown</option>
+			</select> <input type="text" name="ninocrn" id="ninocrn"
+				style='display: none;' /> 
+				<br><br> Date of Birth: <input
+				type="date" name="DOB"><br>
+			<br> Contact Number - Home: <input type="text"
+				name="ContactNumHome"><br> <br> Contact Number -
+			Mobile: <input type="text" name="ContactNumMobile"><br>
+			<br> Contact Number - Other: <input type="text"
+				name="ContactNumOther"><br> <br> Welsh Letter: <br>
+			No <input type="radio" name="Welsh" value="No"><br> Yes
+			<input type="radio" name="Welsh" value="Yes"><br> <br>
+			Large Print Letter: <br> No <input type="radio" name="LP"
+				value="No"><br> Yes <input type="radio" name="LP"
+				value="Yes"><br> <br> <a href="ExternalRef1.html"><input
+				type="button" value="Back" /></a> <input type="submit">
+		</form>
+
+
+
+
+	</div>
 
 
 </body>
