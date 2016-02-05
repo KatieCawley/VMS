@@ -155,7 +155,11 @@ div.main input[type=submit] {
     visibility: visible;
 }
 
-
+div.astorics p {
+	font-family: sans-serif ;
+	color: red;
+	font-si
+}
 
 
 
