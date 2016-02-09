@@ -32,11 +32,14 @@
 		* Health Conditions:
 		<input type="text" name="HealthCondition"><br><br>
 		* Address of Visit: 
-		<select name="Address"required>
+		<select id="Address"required onchange="showDiv(this)">
+			<option value="Other" disabled selected>Please Select</option>
 			<option value="Cust">Customer Address</option>
 			<option value="Rep">Representative Address</option>
 			<option value="Other">Other Address</option>
 		</select><br><br>
+		
+		<div id="hidden_div">
 		Other Address Line 1: 
 		<input type="text" name="HALine1"><br> <br>
 		Other Address Line 2: 
@@ -47,6 +50,9 @@
 		<input type="text" name="HACounty"><br> <br>
 		Other Address Post Code: 
 		<input type="text" name="HAPostCode"><br> <br>
+		</div>
+		
+		
 		* Date Visit Need Identified: 
 		<input type="date" name="visitNeedIdentfied"><br><br>
 		Risk Factors: 
@@ -63,6 +69,26 @@
 	
 </div>
 
+
+<script>
+var select = document.getElementById('Address'),
+onChange = function(event) {
+    var shown = this.options[this.selectedIndex].value == "Other";
+
+    document.getElementById('hidden_div').style.display = shown ? 'block' : 'none';
+};
+
+
+//attach event handler
+if (window.addEventListener) {
+ select.addEventListener('change', onChange, false);
+} else {
+ // of course, IE < 9 needs special treatment
+ select.attachEvent('onchange', function() {
+     onChange.apply(select, arguments);
+ });
+}
+</script>
 
 
 
